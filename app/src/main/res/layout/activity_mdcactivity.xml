@@ -10,6 +10,7 @@
         android:id="@+id/icon_cost_of_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="@+id/cost_of_service"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,23 +35,37 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <Button
+        android:id="@+id/calculate_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/round_up_switch"
+        app:layout_constraintTop_toBottomOf="@+id/round_up_switch" />
+
     <ImageView
         android:id="@+id/icon_service_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/service_question"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/service_question"
         app:srcCompat="@drawable/ic_service" />
 
-    <TextView
-        android:id="@+id/service_question"
+    <ImageView
+        android:id="@+id/icon_round_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="How was your service?"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/cost_of_service"
-        app:layout_constraintTop_toBottomOf="@+id/cost_of_service" />
+        android:layout_marginStart="16dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/round_up_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/round_up_switch"
+        app:srcCompat="@drawable/ic_round_up" />
 
     <RadioGroup
         android:id="@+id/tip_options"
@@ -78,32 +93,37 @@
             android:text="Okay (15%)" />
     </RadioGroup>
 
-    <ImageView
-        android:id="@+id/icon_round_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@+id/round_up_switch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/round_up_switch"
-        app:srcCompat="@drawable/ic_round_up" />
-
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/round_up_switch"
+    <TextView
+        android:id="@+id/service_question"
+        style="@style/Widget.TipTime.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:text="Round up tip?"
-        app:layout_constraintStart_toEndOf="@id/icon_round_up"
-        app:layout_constraintTop_toBottomOf="@+id/tip_options" />
+        android:text="How was your service?"
+        app:layout_constraintStart_toStartOf="@+id/cost_of_service"
+        app:layout_constraintTop_toBottomOf="@+id/cost_of_service" />
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/tip_result"
+        style="@style/Widget.TipTime.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calculate"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="539dp" />
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculate_button"
+        tools:text="Tip Amount: $10" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/round_up_switch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Round up tip?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/icon_round_up"
+        app:layout_constraintTop_toBottomOf="@+id/tip_options" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
