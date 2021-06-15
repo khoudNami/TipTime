@@ -14,10 +14,12 @@ class MDCActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mdcactivity)
 
-        val costOfServiceEditText: TextInputEditText =
-            findViewById<TextInputEditText>(R.id.cost_of_service_edit_text)
+        val costOfServiceEditText: TextInputEditText = findViewById(R.id.cost_of_service_edit_text)
 
-        costOfServiceEditText.setOnKeyListener { v, keyCode, _ -> handleKeyEvent(v, keyCode) }
+        costOfServiceEditText.setOnKeyListener { v, keyCode, _ ->
+            handleKeyEvent(v, keyCode)
+        }
+
     }
 
     private fun handleKeyEvent(view: View, keyCode: Int): Boolean {
